@@ -15,7 +15,7 @@ _comp_options+=(globdots) # include hidden files
 autoload autocomplete/arduino-cli
 
 # Plugins
-export ZSH="/home/ray13/.config/zsh/.oh-my-zsh"
+export ZSH="$ZSH_CONFIG_HOME/zsh/.oh-my-zsh"
 ZSH_THEME="bira"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
