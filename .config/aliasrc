@@ -1,0 +1,103 @@
+# alias ls='exa --group-directories-first' \
+alias dwmc='nvim ~/.config/dwm/config.def.h' \
+	 dwmconfig='cd ~/.config/dwm' \
+	 stc='nvim ~/.config/st/config.def.h' \
+   zrc='nvim ~/.config/zsh/.zshrc' \
+   arc='nvim ~/.config/aliasrc' \
+	 nvrc='nvim ~/.config/nvim/init.vim' \
+	 dd='dd bs=4M status=progress' \
+   cal='cal -y' \
+	 pkg="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'" \
+	 wifi='nmtui' \
+   testuni='curl https://www.cl.cam.ac.uk/\~mgk25/ucs/examples/UTF-8-demo.txt | less' \
+   sm='sudo mount' \
+   sum='sudo umount' \
+	 weather='curl http://wttr.in/' \
+	 v='nvim' \
+	 sv='sudo nvim' \
+	 cabal='cabal --config-file=~/.config/cabal/config' \
+	 ishutdown='sudo shutdown -h now' \
+	 cp='cp -i' \
+	 compile='rm -f config.h && sudo make clean install' \
+	 githistory='git log --graph' \
+   gadd='git remote add origin' \
+	 smci='sudo make clean install' \
+	 ac='arduino-cli' \
+	 emacsserver="emacsclient -a '' -c" \
+	 ec='nvim ~/.emacs.d/init.el' \
+	 sp='sudo pacman' \
+	 pp='sudo powerpill' \
+   ipaddr='curl https://am.i.mullvad.net/ip' \
+	 mv='mv -i -v' \
+	 router='ssh -E ~/.log/router.log admin@192.168.1.1' \
+	 # pimount='sudo sshfs pi@192.168.1.245:/' \
+	 longneck='ssh raymond@10.142.173.224' \
+	 nt='st -e zsh -c "cd $PWD; exec bash" &' \
+	 scim='sc-im' \
+	 calc='qalc' \
+	 sl='ls' \
+	 slblk='lsblk' \
+	 cy='y10t3' \
+	 nf='neofetch' \
+	 lb='cd ~/.local/bin; ls' \
+	 d='cd ~/Downloads; ls' \
+	 w='cd ~/Pictures/Wallpapers; ls' \
+	 b='cd ~/build/; ls' \
+	 bS='cd ~/build/suckless/; ls' \
+	 c='cd ~/coding/; ls' \
+	 cP='cd ~/coding/Python/; ls' \
+	 cC='cd ~/coding/C/; ls' \
+   web='cd ~/coding/Website/; ls' \
+	 cC+='cd ~/coding/C++/; ls' \
+	 cR='cd ~/coding/Rust/; ls' \
+	 wd='cd /home/ray13/Windows/Users/Ray/Desktop' \
+	 bs='cd ~/build/suckless/' \
+	 ss='cd ~/Pictures/Screenshots/; ls' \
+	 dD='cd ~/Desktop/; ls' \
+	 db='cd ~/Desktop/Books/; ls' \
+	 da='cd ~/Desktop/AudioBooks/; ls' \
+	 sc='cd ~/School/; ls' \
+	 scg='cd ~/School/Glit/; ls' \
+	 ce='cd ~/School/English/; ls' \
+	 scc='cd ~/School/Chinese/; ls' \
+	 scs='cd ~/School/Science/; ls' \
+	 scb='cd ~/School/Books/; ls' \
+	 sch='cd ~/School/Health/; ls' \
+	 .c='cd ~/.config/; ls' \
+	 md='cd ~/School/Markdown/; ls' \
+	 dis='disown' \
+	 ydl='youtube-dl' \
+   y='yay' \
+	 tmux='tmux -f ~/.config/tmux/config' \
+	 grep="grep --color=auto" \
+	 diff="diff --color=auto" \
+	 za='zathura' \
+	 bt='bluetoothctl' \
+	 tmls="tmux lsw -F '#{window_id} #{window_name}'" \
+	 caps='setxkbmap -option caps:swapescape' \
+   exip='curl https://am.i.mullvad.net' \
+   vpnstatus='curl https://am.i.mullvad.net/connected' \
+	 ipa='ip a' \
+	 ka='killall' \
+	 Chadpods='AC:1D:06:94:7D:02' \
+	 :q='exit' \
+	 :Q='exit'
+
+vf() { fzf | xargs -r -I % $EDITOR %;}
+psgrep() {
+	for FILE1 in "$@"
+	do
+	ps -aux | grep $FILE1
+	done ;}
+chingbus() { ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3; }
+cr() { g++ $1 && ./a.out }
+
+max_download() {
+  youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 $1
+}
+
+# emacs='emacs --no-window-system' \
+# emacsw='emacs' \
+# shred='shred -uzxv' \
+alias ls='ls -hN --color=auto --group-directories-first'
+alias rsyncnow='rsync -vrP --delete-after ~/web/ root@rdang.dev:/var/www/rdang'
